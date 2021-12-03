@@ -1,5 +1,5 @@
 //
-//  myViewController.swift
+//  AddViewController.swift
 //  TODO List
 //
 //  Created by Arthur Khadraoui-Nicod on 03/12/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class myViewController: UIViewController {
+class AddViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

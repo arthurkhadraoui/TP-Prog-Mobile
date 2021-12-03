@@ -8,9 +8,13 @@
 import UIKit
 
 class myTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var Title: UILabel!
 
+    
+    @IBOutlet weak var NameLabel: UILabel!
+    
+    @IBOutlet weak var DescLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
