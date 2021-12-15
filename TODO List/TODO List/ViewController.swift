@@ -32,9 +32,42 @@ class ViewController: UIViewController,UITableViewDataSource {
             // Find the row of the cell
             let row = indexPath.row
             data.remove(at: row)
-            myTableView.deleteRows(at: [indexPath], with: .fade)
+            myTableView.reloadData()
         }
     }
+    
+    @IBAction func unwindToMainView(_ unwindSegue: UIStoryboardSegue) {
+        
+        if unwindSegue.identifier == "cancel" {
+            let addViewController = unwindSegue.source as! AddViewController
+            addViewController.dismiss(animated: true, completion: nil)
+        }
+        if unwindSegue.identifier == "save" {
+            let addViewController = unwindSegue.source as! AddViewController
+            if let newName = addViewController.NameTF.text, let newDesc = addViewController.DescTF.text {
+                let new_data = TODO(name: newName,
+                                      desc: newDesc)
+                data.append(new_data)
+                myTableView.reloadData()
+            }
+        }
+        if unwindSegue.identifier == "back" {
+            
+        }
+        // Use data from the view controller which initiated the unwind segue
+    }
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "details" {
+            let detailsViewController = segue.destination as! DetailsViewController
+            let myIndexPath = myTableView.indexPathForSelectedRow!
+            let row = myIndexPath.row
+            detailsViewController.data = data[row]
+        }
+    }
+
+
     
     
     

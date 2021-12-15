@@ -17,6 +17,7 @@
 		3814017E275A59BA0042B9EE /* myTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814017D275A59BA0042B9EE /* myTableViewCell.swift */; };
 		38140181275A5A600042B9EE /* myViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38140180275A5A600042B9EE /* myViewController.swift */; };
 		38140184275A72FB0042B9EE /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38140183275A72FB0042B9EE /* AddViewController.swift */; };
+		38C0A5BF2769DE79005A6159 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0A5BE2769DE79005A6159 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3814017D275A59BA0042B9EE /* myTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myTableViewCell.swift; sourceTree = "<group>"; };
 		38140180275A5A600042B9EE /* myViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myViewController.swift; sourceTree = "<group>"; };
 		38140183275A72FB0042B9EE /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		38C0A5BE2769DE79005A6159 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				3814016E275A56C70042B9EE /* Assets.xcassets */,
 				38140170275A56C70042B9EE /* LaunchScreen.storyboard */,
 				38140173275A56C70042B9EE /* Info.plist */,
+				38C0A5BE2769DE79005A6159 /* DetailsViewController.swift */,
 			);
 			path = "TODO List";
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				3814016A275A56BF0042B9EE /* ViewController.swift in Sources */,
 				3814017E275A59BA0042B9EE /* myTableViewCell.swift in Sources */,
 				38140184275A72FB0042B9EE /* AddViewController.swift in Sources */,
+				38C0A5BF2769DE79005A6159 /* DetailsViewController.swift in Sources */,
 				38140166275A56BF0042B9EE /* AppDelegate.swift in Sources */,
 				38140168275A56BF0042B9EE /* SceneDelegate.swift in Sources */,
 				38140181275A5A600042B9EE /* myViewController.swift in Sources */,

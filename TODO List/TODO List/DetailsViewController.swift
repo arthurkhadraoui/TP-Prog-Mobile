@@ -1,20 +1,25 @@
 //
-//  AddViewController.swift
+//  DetailsViewController.swift
 //  TODO List
 //
-//  Created by Arthur Khadraoui-Nicod on 03/12/2021.
+//  Created by Arthur Khadraoui-Nicod on 15/12/2021.
 //
 
 import UIKit
 
-class AddViewController: UIViewController {
-    @IBOutlet weak var NameTF: UITextField!
-    @IBOutlet weak var DescTF: UITextField!
+class DetailsViewController: UIViewController {
+    
+    var data: TODO?
+    @IBOutlet weak var NameDetail: UILabel!
+    @IBOutlet weak var DescDetail: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let data = data {
+            NameDetail.text = data.name
+            DescDetail.text = data.desc
+        }
     }
     
 
