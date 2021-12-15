@@ -12,6 +12,8 @@ class DetailsViewController: UIViewController {
     var data: TODO?
     @IBOutlet weak var NameDetail: UILabel!
     @IBOutlet weak var DescDetail: UILabel!
+    @IBOutlet weak var StatusDetail: UILabel!
+    @IBOutlet weak var DateDetail: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,14 @@ class DetailsViewController: UIViewController {
         if let data = data {
             NameDetail.text = data.name
             DescDetail.text = data.desc
+            StatusDetail.text = data.status
+            DateDetail.text = data.date.description
+            if data.status == "A faire"{
+                StatusDetail.textColor = UIColor.red
+            }
+            else{
+                StatusDetail.textColor = UIColor.green
+            }
         }
     }
     

@@ -14,6 +14,7 @@ class myTableViewCell: UITableViewCell {
     
     @IBOutlet weak var DescLabel: UILabel!
     
+    @IBOutlet weak var StateSwitch: UISwitch!
     
     override func awakeFromNib() {
         super.awakeFromNib()

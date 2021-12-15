@@ -23,9 +23,30 @@ class ViewController: UIViewController,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! myTableViewCell
         cell.NameLabel.text = data[indexPath.row].name
         cell.DescLabel.text = data[indexPath.row].desc
+        if data[indexPath.row].status=="A faire"{
+            cell.StateSwitch.isOn=false
+        }
+        else{
+            cell.StateSwitch.isOn=true
+        }
+        
+        cell.StateSwitch.tag = indexPath.row
+        
 
         return cell
     }
+    
+    @IBAction func changeState(_ sender: UISwitch) {
+        
+        if sender.isOn {
+            data[sender.tag].status = "Fait"
+        }
+        else{
+            data[sender.tag].status = "A faire"
+        }
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -46,8 +67,11 @@ class ViewController: UIViewController,UITableViewDataSource {
             let addViewController = unwindSegue.source as! AddViewController
             if let newName = addViewController.NameTF.text, let newDesc = addViewController.DescTF.text {
                 let new_data = TODO(name: newName,
-                                      desc: newDesc)
+                                      desc: newDesc,date: addViewController.DateTF.date)
                 data.append(new_data)
+                data.sort { (t1: TODO, t2: TODO) -> Bool in
+                    return t1.date < t2.date
+                }
                 myTableView.reloadData()
             }
         }
@@ -76,7 +100,6 @@ class ViewController: UIViewController,UITableViewDataSource {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        data.append(TODO(name: "Faire courses", desc: "Oeufs"))
         
         myTableView.dataSource = self
     }
